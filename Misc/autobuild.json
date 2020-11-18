@@ -1,0 +1,12 @@
+{
+  "mac-output" : [
+    "..\/Mac Framework\/PDQ.framework"
+  ],
+  "name" : "PDQ",
+  "working-directory" : "..\/",
+  "ios-output" : [
+    "..\/iOS Framework\/PDQ.framework"
+  ],
+  "scriptpath" : "..\/PDQ\/BuildFramework.sh",
+  "disabled" : true
+}

@@ -1,0 +1,9 @@
+Build
+.DS_Store
+/Mac Framework
+/iOS Framework
+PDQ.xcodeproj/project.xcworkspace/xcuserdata/ben.xcuserdatad/UserInterfaceState.xcuserstate
+PDQ.xcodeproj/project.xcworkspace/xcshareddata
+PDQ.xcodeproj/xcuserdata/ben.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+/.swiftpm/xcode/xcuserdata
+/.swiftpm

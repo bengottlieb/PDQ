@@ -1,0 +1,19 @@
+{
+  "disabled" : false,
+  "ios-frameworks" : [
+    "../Frameworks/iOS_Frameworks/Gulliver.framework",
+    "../Frameworks/iOS_Frameworks/GulliverUI.framework",
+    "../Frameworks/iOS_Frameworks/zlib.framework",
+    "../Frameworks/iOS_Frameworks/Plug.framework",
+    "../Frameworks/iOS_Frameworks/Hoard.framework",
+    "../Frameworks/iOS_Frameworks/CommonCrypto.framework",
+    "../Frameworks/iOS_Frameworks/CrossPlatformKit.framework",
+  ],
+ "mac-frameworks" : [
+    "../Frameworks/macOS_Frameworks/Gulliver.framework",
+    "../Frameworks/macOS_Frameworks/Gulliver.framework",
+    "../Frameworks/macOS_Frameworks/Hoard.framework",
+    "../Frameworks/macOS_Frameworks/Plug.framework",
+    "../Frameworks/macOS_Frameworks/CrossPlatformKit.framework",
+  ],
+}
