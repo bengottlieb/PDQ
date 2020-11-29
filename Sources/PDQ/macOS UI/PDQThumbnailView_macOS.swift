@@ -177,7 +177,7 @@ public class PDQThumbnailView: NSView {
 			self.resizeTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { [weak self] timer in
 				self?.updateItemSize(ignoreSmallChanges: false)
 			})
-			RunLoop.current.add(self.resizeTimer!, forMode: .eventTrackingRunLoopMode)
+			RunLoop.current.add(self.resizeTimer!, forMode: .eventTracking)
 		} else {
 			self.previousSize = self.bounds.size
 		}
