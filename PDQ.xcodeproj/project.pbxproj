@@ -28,8 +28,6 @@
 		B5087CE21F1F8DDE002261D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5087CE01F1F8DDE002261D4 /* LaunchScreen.storyboard */; };
 		B5087CFA1F1F937F002261D4 /* PDQ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5B088AE1F1F6F7D00CB8D40 /* PDQ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5087CFC1F1F9488002261D4 /* SimplePDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5087CF41F1F92BE002261D4 /* SimplePDF.pdf */; };
-		B50A3E842269ECFE0005C952 /* Mueller-Report.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B50A3E832269ECFE0005C952 /* Mueller-Report.pdf */; };
-		B50A3E852269ECFE0005C952 /* Mueller-Report.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B50A3E832269ECFE0005C952 /* Mueller-Report.pdf */; };
 		B5121C7020279E580028B606 /* single-page.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5121C6F20279E580028B606 /* single-page.pdf */; };
 		B5121C7120279E580028B606 /* single-page.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5121C6F20279E580028B606 /* single-page.pdf */; };
 		B51D5D5A1F221BC800D096C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D5D591F221BC800D096C3 /* AppDelegate.swift */; };
@@ -44,8 +42,6 @@
 		B51D5D711F221E1600D096C3 /* PDFWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51D5D6F1F221E1600D096C3 /* PDFWindowController.xib */; };
 		B5B088B81F1F6F7D00CB8D40 /* PDQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B088AE1F1F6F7D00CB8D40 /* PDQ.framework */; };
 		B5B088BD1F1F6F7D00CB8D40 /* PDQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B088BC1F1F6F7D00CB8D40 /* PDQTests.swift */; };
-		B5B138F41F40CFB5007CF702 /* Tunnels & Trolls.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5E6DD501F40CAE400FBCCE4 /* Tunnels & Trolls.pdf */; };
-		B5B138F51F40CFB5007CF702 /* Tunnels & Trolls.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5E6DD501F40CAE400FBCCE4 /* Tunnels & Trolls.pdf */; };
 		B5B8774F23B95A9400C0DEE2 /* PDQDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772823B95A9400C0DEE2 /* PDQDocumentViewController.swift */; };
 		B5B8775123B95A9500C0DEE2 /* PDQView.EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772923B95A9400C0DEE2 /* PDQView.EditView.swift */; };
 		B5B8775323B95A9500C0DEE2 /* PDQThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772B23B95A9400C0DEE2 /* PDQThumbnailCollectionViewCell.swift */; };
@@ -60,7 +56,6 @@
 		B5B8776623B95A9500C0DEE2 /* PDQViewPageCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773623B95A9400C0DEE2 /* PDQViewPageCollectionItem.swift */; };
 		B5B8776823B95A9500C0DEE2 /* PDQThumbnailCollectionItem_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773723B95A9400C0DEE2 /* PDQThumbnailCollectionItem_macOS.swift */; };
 		B5B8776A23B95A9500C0DEE2 /* PDQViewPageCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B8773823B95A9400C0DEE2 /* PDQViewPageCollectionItem.xib */; };
-		B5B8776C23B95A9500C0DEE2 /* PDQThumbnailCollectionItem_macOS.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B8773923B95A9400C0DEE2 /* PDQThumbnailCollectionItem_macOS.xib */; };
 		B5B8776E23B95A9500C0DEE2 /* NSCollectionView+PDQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773A23B95A9400C0DEE2 /* NSCollectionView+PDQ.swift */; };
 		B5B8777023B95A9500C0DEE2 /* PDQView.PageCollectionItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773B23B95A9400C0DEE2 /* PDQView.PageCollectionItem2.swift */; };
 		B5B8777223B95A9500C0DEE2 /* PDQPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773C23B95A9400C0DEE2 /* PDQPageView.swift */; };
@@ -158,7 +153,6 @@
 		B5087CE11F1F8DDE002261D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5087CE31F1F8DDE002261D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5087CF41F1F92BE002261D4 /* SimplePDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SimplePDF.pdf; sourceTree = "<group>"; };
-		B50A3E832269ECFE0005C952 /* Mueller-Report.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Mueller-Report.pdf"; sourceTree = "<group>"; };
 		B5121C6F20279E580028B606 /* single-page.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "single-page.pdf"; sourceTree = "<group>"; };
 		B51D5D571F221BC800D096C3 /* TestHost-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestHost-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51D5D591F221BC800D096C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,7 +181,6 @@
 		B5B8773623B95A9400C0DEE2 /* PDQViewPageCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQViewPageCollectionItem.swift; sourceTree = "<group>"; };
 		B5B8773723B95A9400C0DEE2 /* PDQThumbnailCollectionItem_macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQThumbnailCollectionItem_macOS.swift; sourceTree = "<group>"; };
 		B5B8773823B95A9400C0DEE2 /* PDQViewPageCollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDQViewPageCollectionItem.xib; sourceTree = "<group>"; };
-		B5B8773923B95A9400C0DEE2 /* PDQThumbnailCollectionItem_macOS.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDQThumbnailCollectionItem_macOS.xib; sourceTree = "<group>"; };
 		B5B8773A23B95A9400C0DEE2 /* NSCollectionView+PDQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCollectionView+PDQ.swift"; sourceTree = "<group>"; };
 		B5B8773B23B95A9400C0DEE2 /* PDQView.PageCollectionItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQView.PageCollectionItem2.swift; sourceTree = "<group>"; };
 		B5B8773C23B95A9400C0DEE2 /* PDQPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQPageView.swift; sourceTree = "<group>"; };
@@ -214,7 +207,6 @@
 		B5D735B01F20C0980099F101 /* ICC Spec.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ICC Spec.pdf"; sourceTree = "<group>"; };
 		B5E6DD381F3FE5D700FBCCE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B5E6DD3A1F3FE5DD00FBCCE4 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Quartz.framework; sourceTree = DEVELOPER_DIR; };
-		B5E6DD501F40CAE400FBCCE4 /* Tunnels & Trolls.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Tunnels & Trolls.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,10 +272,8 @@
 		B5087CF31F1F92BE002261D4 /* Test Docs */ = {
 			isa = PBXGroup;
 			children = (
-				B50A3E832269ECFE0005C952 /* Mueller-Report.pdf */,
 				B5C84A74209BA80F00156D17 /* Swift Algorithms.pdf */,
 				B5121C6F20279E580028B606 /* single-page.pdf */,
-				B5E6DD501F40CAE400FBCCE4 /* Tunnels & Trolls.pdf */,
 				B5D735AE1F20C0980099F101 /* CoreData.pdf */,
 				B5D735B01F20C0980099F101 /* ICC Spec.pdf */,
 				B5D735AF1F20C0980099F101 /* PDF Spec.pdf */,
@@ -403,7 +393,6 @@
 				B5B8773623B95A9400C0DEE2 /* PDQViewPageCollectionItem.swift */,
 				B5B8773723B95A9400C0DEE2 /* PDQThumbnailCollectionItem_macOS.swift */,
 				B5B8773823B95A9400C0DEE2 /* PDQViewPageCollectionItem.xib */,
-				B5B8773923B95A9400C0DEE2 /* PDQThumbnailCollectionItem_macOS.xib */,
 			);
 			path = "Collection Items";
 			sourceTree = "<group>";
@@ -595,7 +584,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Stand Alone, Inc.";
 				TargetAttributes = {
 					B5087CD41F1F8DDE002261D4 = {
@@ -606,6 +595,7 @@
 					B51D5D561F221BC800D096C3 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = YY6CWUX533;
+						LastSwiftMigration = 1250;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -626,7 +616,7 @@
 					B5B088D01F1F706900CB8D40 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = YY6CWUX533;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
 					B5B088DE1F1F70F500CB8D40 = {
@@ -670,11 +660,9 @@
 				B5087CE21F1F8DDE002261D4 /* LaunchScreen.storyboard in Resources */,
 				B5087CFC1F1F9488002261D4 /* SimplePDF.pdf in Resources */,
 				B5D735B21F20C0FC0099F101 /* ICC Spec.pdf in Resources */,
-				B5B138F41F40CFB5007CF702 /* Tunnels & Trolls.pdf in Resources */,
 				B5087CDF1F1F8DDE002261D4 /* Assets.xcassets in Resources */,
 				B5121C7020279E580028B606 /* single-page.pdf in Resources */,
 				B5D735B31F20C0FC0099F101 /* PDF Spec.pdf in Resources */,
-				B50A3E852269ECFE0005C952 /* Mueller-Report.pdf in Resources */,
 				B5087CDD1F1F8DDE002261D4 /* Main.storyboard in Resources */,
 				B5D735B11F20C0FC0099F101 /* CoreData.pdf in Resources */,
 				B5C84A75209BA80F00156D17 /* Swift Algorithms.pdf in Resources */,
@@ -688,7 +676,6 @@
 				B51D5D5C1F221BC800D096C3 /* Assets.xcassets in Resources */,
 				B51D5D711F221E1600D096C3 /* PDFWindowController.xib in Resources */,
 				B51D5D5F1F221BC800D096C3 /* MainMenu.xib in Resources */,
-				B5B138F51F40CFB5007CF702 /* Tunnels & Trolls.pdf in Resources */,
 				B51D5D691F221BFF00D096C3 /* PDF Spec.pdf in Resources */,
 				B5121C7120279E580028B606 /* single-page.pdf in Resources */,
 				B51D5D681F221BFF00D096C3 /* ICC Spec.pdf in Resources */,
@@ -710,7 +697,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50A3E842269ECFE0005C952 /* Mueller-Report.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,7 +704,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5B8776C23B95A9500C0DEE2 /* PDQThumbnailCollectionItem_macOS.xib in Resources */,
 				B5B8776A23B95A9500C0DEE2 /* PDQViewPageCollectionItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -886,7 +871,7 @@
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/PDQTests/TestHost-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -915,7 +900,7 @@
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/PDQTests/TestHost-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -937,15 +922,18 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YY6CWUX533;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/PDQTests/TestHost-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.TestHost-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -959,15 +947,18 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YY6CWUX533;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/PDQTests/TestHost-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.TestHost-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -996,6 +987,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1021,7 +1013,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1060,6 +1052,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1079,7 +1072,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -1212,12 +1205,13 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.PDQ-macOS";
 				PRODUCT_MODULE_NAME = PDQ;
 				PRODUCT_NAME = PDQ;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1247,12 +1241,13 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.PDQ-macOS";
 				PRODUCT_MODULE_NAME = PDQ;
 				PRODUCT_NAME = PDQ;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

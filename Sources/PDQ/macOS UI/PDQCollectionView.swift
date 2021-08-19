@@ -38,6 +38,9 @@ class PDQCollectionView: NSCollectionView {
 		view.scrollView = NSScrollView(frame: frame ?? parent.bounds)
 		view.scrollView.documentView = view
 		view.scrollView.autoresizingMask = [.width, .height]
+		let flow = NSCollectionViewFlowLayout()
+		flow.scrollDirection = .horizontal
+		view.collectionViewLayout = flow
 		
 		parent.addSubview(view.scrollView)
 		

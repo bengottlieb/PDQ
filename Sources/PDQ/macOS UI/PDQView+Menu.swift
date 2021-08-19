@@ -18,28 +18,22 @@ extension PDQView {
 		self.pageForContextualMenu = page
 		self.lastClickLocation = nil
 
-		if #available(OSXApplicationExtension 10.13, *) {
-			let current = page.highlights(at: point)
-			if current.count > 0 {
-				self.lastClickLocation = point
-				menu.addItem(NSMenuItem(title: NSLocalizedString("Remove Highlight", comment: "remove PDF highlight"), action: #selector(removeCurrentHighlight), keyEquivalent: ""))
-			} else if let selection = self.pdfView.currentSelection {
-				if self.pdfView.annotationsIntersecting(selection).count > 0 {
-					menu.addItem(NSMenuItem(title: NSLocalizedString("Remove Highlight", comment: "remove PDF highlight"), action: #selector(removeHighlightFromSelection), keyEquivalent: ""))
-				} else {
-					menu.addItem(NSMenuItem(title: NSLocalizedString("Highlight Selection", comment: "highlight PDF selection"), action: #selector(highlightSelection), keyEquivalent: ""))
-				}
+		let current = page.highlights(at: point)
+		if current.count > 0 {
+			self.lastClickLocation = point
+			menu.addItem(NSMenuItem(title: NSLocalizedString("Remove Highlight", comment: "remove PDF highlight"), action: #selector(removeCurrentHighlight), keyEquivalent: ""))
+		} else if let selection = self.pdfView.currentSelection {
+			if self.pdfView.annotationsIntersecting(selection).count > 0 {
+				menu.addItem(NSMenuItem(title: NSLocalizedString("Remove Highlight", comment: "remove PDF highlight"), action: #selector(removeHighlightFromSelection), keyEquivalent: ""))
+			} else {
+				menu.addItem(NSMenuItem(title: NSLocalizedString("Highlight Selection", comment: "highlight PDF selection"), action: #selector(highlightSelection), keyEquivalent: ""))
 			}
 		}
-		
-		if #available(OSXApplicationExtension 10.13, *), page.hasHighlights {
-			menu.addItem(NSMenuItem(title: NSLocalizedString("Remove Page Highlights", comment: "remove PDF page highlights"), action: #selector(removePageHighlights), keyEquivalent: ""))
-		}
+		menu.addItem(NSMenuItem(title: NSLocalizedString("Remove Page Highlights", comment: "remove PDF page highlights"), action: #selector(removePageHighlights), keyEquivalent: ""))
 
 		return menu
 	}
 	
-	@available(OSXApplicationExtension 10.13, *)
 	@objc func highlightSelection() {
 		guard let selection = self.pdfView.currentSelection else { return }
 		
@@ -50,7 +44,6 @@ extension PDQView {
 		self.delegate?.highlightsChanged(in: self)
 	}
 
-	@available(OSXApplicationExtension 10.13, *)
 	@objc func removeHighlightFromSelection() {
 		guard let selection = self.pdfView.currentSelection else { return }
 		
@@ -60,14 +53,12 @@ extension PDQView {
 		self.delegate?.highlightsChanged(in: self)
 	}
 	
-	@available(OSXApplicationExtension 10.13, *)
 	@objc func removePageHighlights() {
 		self.pdfView.removeHighlights(from: self.pageForContextualMenu)
 		NotificationCenter.default.post(name: Notifications.pdfDidChangeHighlights, object: self.document)
 		self.delegate?.highlightsChanged(in: self)
 	}
 	
-	@available(OSXApplicationExtension 10.13, *)
 	@objc func removeCurrentHighlight() {
 		if let point = self.lastClickLocation, let page = self.pageForContextualMenu {
 			let current = page.highlights(at: point)

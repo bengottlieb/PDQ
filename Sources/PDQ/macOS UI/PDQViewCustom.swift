@@ -67,7 +67,7 @@ open class PDQViewCustom: NSView {
 		self.collectionViewLayout.sectionInset = NSEdgeInsets()
 		self.collectionViewLayout.scrollDirection = self.scrollAxis
 		self.collectionView.collectionViewLayout = self.collectionViewLayout
-		let nib = NSNib(nibNamed: NSNib.Name("PDQViewPageCollectionItem"), bundle: Bundle(for: type(of: self)))
+		let nib = NSNib(nibNamed: "PDQViewPageCollectionItem", bundle: Bundle(for: type(of: self)))
 		self.collectionView.register(nib, forItemWithIdentifier: PDQViewPageCollectionItem.identifier)
 		self.collectionView.delegate = self
 		self.collectionView.dataSource = self

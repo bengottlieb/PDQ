@@ -37,34 +37,16 @@ public class PDQPage: Equatable {
 	}
 	
 	public func generateImage(ofSize size: CGSize) -> UXImage? {
-		if #available(OSX 10.13, iOS 11, *) {
-			return self.page.thumbnail(of: size, for: .mediaBox)
-		}
-		#if os(OSX)
-			guard let url = self.document.url,
-				let data = try? Data(contentsOf: url),
-				let rep = NSPDFImageRep(data: data)
-			else { return nil }
-			
-			let image = NSImage(size: rep.size, flipped: false) { ctx in
-				rep.draw(in: CGRect(origin: .zero, size: rep.size))
-			}
-			return image
-		#else
-			return nil
-		#endif
+		return self.page.thumbnail(of: size, for: .mediaBox)
 	}
 	
 	var hasHighlights: Bool {
-		if #available(OSXApplicationExtension 10.13, *) {
-			for annotation in self.page.annotations {
-				if annotation.type == PDFAnnotationSubtype.highlight { return true }
-			}
+		for annotation in self.page.annotations {
+			if annotation.type == PDFAnnotationSubtype.highlight { return true }
 		}
 		return false
 	}
 	
-	@available(OSXApplicationExtension 10.13, *)
 	func thumbnail(size: CGSize) -> UXImage? {
 		if self.cachedThumbnail == nil {
 			self.cachedThumbnail = self.page.thumbnail(of: size, for: .mediaBox)

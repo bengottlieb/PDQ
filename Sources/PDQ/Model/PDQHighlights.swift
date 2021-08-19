@@ -40,7 +40,6 @@ public struct PDQHighlights: Codable {
 		}
 	}
 	
-	@available(OSXApplicationExtension 10.13, *)
 	mutating func apply(deltas: PDFView.HighlightAnnotationDeltas, in doc: PDQDocument) {
 		for element in deltas.removed {
 			guard let page = element.page, let pageNumber = doc.page(from: page)?.pageNumber else { continue }
@@ -60,7 +59,6 @@ public struct PDQHighlights: Codable {
 		self.highlights += sections
 	}
 	
-	@available(OSXApplicationExtension 10.13, *)
 	func convertToAnnotations(in doc: PDQDocument) -> [PDFAnnotation] {
 		return self.highlights.compactMap { $0.convertToAnnotation(in: doc) }
 	}
@@ -115,8 +113,7 @@ public struct PDQHighlights: Codable {
 			self.color = UXColor(red: r, green: g, blue: b, alpha: a)
 		}
 		
-		@available(OSXApplicationExtension 10.13, *)
-		func convertToAnnotation(in doc: PDQDocument) -> PDFAnnotation? {
+			func convertToAnnotation(in doc: PDQDocument) -> PDFAnnotation? {
 			guard let page = doc.document.page(at: self.pageNumber) else { return nil }
 			
 			return PDFAnnotation(bounds: self.rect, onPage: page, color: self.color, text: text)

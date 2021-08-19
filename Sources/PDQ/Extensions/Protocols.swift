@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PDQViewDelegate: class {
+public protocol PDQViewDelegate: AnyObject {
 	func highlightsChanged(in: PDQView)
 	func visiblePageChanged(in: PDQView)
 	func setControls(visible: Bool, in: PDQView, with duration: TimeInterval)

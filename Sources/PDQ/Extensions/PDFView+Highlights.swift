@@ -16,7 +16,6 @@ import CrossPlatformKit
 #endif
 
 
-@available(OSXApplicationExtension 10.13, *)
 extension PDFAnnotation {
 	convenience init(bounds: CGRect, onPage page: PDFPage, color: UXColor, text: String?) {
 		self.init(bounds: bounds, forType: .highlight, withProperties: [PDFAnnotation.createdbyPDQKitKey: true])
@@ -26,7 +25,6 @@ extension PDFAnnotation {
 	}
 }
 
-@available(OSXApplicationExtension 10.13, *)
 extension PDFView {
 	struct HighlightAnnotationDeltas {
 		let added: [PDFAnnotation]

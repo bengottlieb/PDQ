@@ -27,7 +27,7 @@ class PDFWindowController: NSWindowController, PDQViewDelegate, NSWindowDelegate
 	var defaultsKey: String? { guard let id = self.pdf?.identifier else { return nil }; return "pdf-window-\(id)" }
 	
 	class func show(document: PDQDocument) {
-		let controller = PDFWindowController(windowNibName: NSNib.Name("PDFWindowController"))
+		let controller = PDFWindowController(windowNibName: "PDFWindowController")
 		
 		controller.pdf = document
 		
@@ -45,7 +45,7 @@ class PDFWindowController: NSWindowController, PDQViewDelegate, NSWindowDelegate
 //		self.pdfView.displayMode = .singlePage
 		
 		if let key = self.defaultsKey, let frameString = UserDefaults.standard.string(forKey: key + "-frame") {
-			self.window?.setFrameFrom(frameString)
+			self.window?.setFrame(from: frameString)
 		}
 		
 		if #available(OSX 10.13, *) {
@@ -65,9 +65,9 @@ class PDFWindowController: NSWindowController, PDQViewDelegate, NSWindowDelegate
 		}
 		
 		if self.window == nil {
-			let search = PDQSearch(text: "dragon", in: self.pdf!) { search, results in
+			let search = PDQSearch(text: "dragon", in: self.pdf!, completion: { search, results in
 				self.showResult(results.first, from: search)
-			}
+			})
 			
 			search.begin()
 		} else {
@@ -100,7 +100,7 @@ class PDFWindowController: NSWindowController, PDQViewDelegate, NSWindowDelegate
 	}
 	
 	func windowDidResize(_ notification: Notification) {
-		if self.rememberPositionByDocument, let baseKey = self.defaultsKey, let frameString = self.window?.stringWithSavedFrame {
+		if self.rememberPositionByDocument, let baseKey = self.defaultsKey, let frameString = self.window?.frameDescriptor {
 			let key = baseKey + "-frame"
 			UserDefaults.standard.set(frameString, forKey: key)
 		}

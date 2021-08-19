@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if let url = UserDefaults.standard.url(forKey: "last-doc"), let doc = PDQDocument(url: url) {
 			PDFWindowController.show(document: doc)
 		
-		} else if let url = Bundle.main.url(forResource: "Mueller-Report", withExtension: "pdf"), let doc = PDQDocument(url: url) {
+		} else if let url = Bundle.main.url(forResource: "PDF Spec", withExtension: "pdf"), let doc = PDQDocument(url: url) {
 			PDFWindowController.show(document: doc)
 		}
 	}

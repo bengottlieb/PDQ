@@ -11,17 +11,26 @@
 
 import Cocoa
 
-@available(OSXApplicationExtension 10.13, *)
 class PDQThumbnailCollectionItem: NSCollectionViewItem {
 	static let identifier = NSUserInterfaceItemIdentifier(rawValue: "PDQThumbnailCollectionItem")
-
+	
 	var page: PDQPage? { didSet { self.updateUI() }}
 	var showPageNumbers = false
 	var pageNumberLabel: NSTextField?
 	
+	let content = NSImageView()
+	
+	override func loadView() {
+		imageView = content
+		self.view = content
+		self.view.wantsLayer = true
+		
+	}
+	
 	func updateUI() {
 		guard let page = self.page else { return }
 		
+		self.imageView?.tag = page.pageNumber
 		self.imageView?.image = page.thumbnail(size: self.view.bounds.size)
 		if self.showPageNumbers {
 			if self.pageNumberLabel == nil {

@@ -13,31 +13,24 @@ import Quartz
 open class PDQView: NSView {
 	
 	open var document: PDQDocument! { didSet {
-		if #available(OSXApplicationExtension 10.13, *) {
-			(self.thumbnailView as? PDQThumbnailView)?.document = self.document
-		}
+		self.thumbnailView?.document = self.document
 		self.setupInternalView()
 	}}
 	
-	public var useThumbnailView = false { didSet { if #available(OSXApplicationExtension 10.13, *) {
-		self.updateThumbnailView()
-	} }}
+	public var useThumbnailView = false { didSet { self.updateThumbnailView() }}
 	
 	public var highlights = PDQHighlights()
 	
 	public weak var delegate: PDQViewDelegate?
 	var pdfView: PDFView!
-	var thumbnailView: NSView!
+	var thumbnailView: PDQThumbnailView!
 	var controlsHidden = false
 	var thumbnailBottomConstraint: NSLayoutConstraint!
 	var initialScrollPage: Int?
 	var pageNumberLabel: NSTextField!
 	weak var contentClickedTimer: Timer?
 	var scrollHorizontally: Bool {
-		if #available(OSXApplicationExtension 10.13, *) {
-			return self.pdfView?.displayDirection == .horizontal
-		}
-		return false
+		return self.pdfView?.displayDirection == .horizontal
 	}
 	
 	public func showSearchResult(_ result: PDQSearchResult) {
@@ -98,9 +91,7 @@ open class PDQView: NSView {
 		}
 		
 		self.pdfView.document = self.document?.document
-		if #available(OSXApplicationExtension 10.13, *) {
-			self.pdfView.displayDirection = .horizontal
-		}
+		self.pdfView.displayDirection = .horizontal
 		
 		if let first = self.document.firstPage {
 			self.pdfView.scaleFactor = first.page.getScale(within: self.bounds.size)
@@ -146,10 +137,8 @@ open class PDQView: NSView {
 	
 	public func load(highlights: PDQHighlights) {
 		self.highlights = highlights
-		if #available(OSXApplicationExtension 10.13, *) {
-			let annotations = self.highlights.convertToAnnotations(in: self.document)
-			self.pdfView.document?.addAnnotations(annotations)
-		}
+		let annotations = self.highlights.convertToAnnotations(in: self.document)
+		self.pdfView.document?.addAnnotations(annotations)
 	}
 	
 	public var currentPage: PDQPage? {
@@ -295,7 +284,6 @@ extension PDQView {
 	}
 }
 
-@available(OSXApplicationExtension 10.13, *)
 extension PDQView {
 	func updateThumbnailView() {
 		if self.useThumbnailView {
@@ -313,9 +301,8 @@ extension PDQView {
 				self.thumbnailBottomConstraint.isActive = true
 			}
 
-			guard let thumb = self.thumbnailView as? PDQThumbnailView else { return }
-			thumb.document = self.document
-			thumb.thumbnailTarget = self
+			self.thumbnailView?.thumbnailTarget = self
+			self.thumbnailView?.document = self.document
 		} else {
 			self.thumbnailView?.removeFromSuperview()
 		}

@@ -10,7 +10,7 @@
 import Cocoa
 import Quartz
 
-public protocol PDQThumbnailTarget: class {
+public protocol PDQThumbnailTarget: AnyObject {
 	func jump(to pageNumber: Int, animated: Bool)
 	func startScrolling()
 	func continueScrolling()
@@ -19,7 +19,6 @@ public protocol PDQThumbnailTarget: class {
 	var visiblePages: [PDQPage] { get }
 }
 
-@available(OSXApplicationExtension 10.13, *)
 public class PDQThumbnailView: NSView {
 	public var thumbnailTarget: PDQThumbnailTarget!
 	
@@ -75,8 +74,7 @@ public class PDQThumbnailView: NSView {
 			self.collectionView.delegate = self
 			self.collectionView.dataSource = self
 			
-			let nib = NSNib(nibNamed: NSNib.Name("PDQThumbnailCollectionItem_macOS"), bundle: Bundle(for: type(of: self)))
-			self.collectionView.register(nib, forItemWithIdentifier: PDQThumbnailCollectionItem.identifier)
+			self.collectionView.register(PDQThumbnailCollectionItem.self, forItemWithIdentifier: PDQThumbnailCollectionItem.identifier)
 			
 			self.collectionViewLayout.itemSize = CGSize(width: self.imageHeight, height: self.imageHeight)
 			self.collectionViewLayout.minimumInteritemSpacing = 0
@@ -87,6 +85,8 @@ public class PDQThumbnailView: NSView {
 			self.collectionView.userInteractionEnabled = false
 			
 			self.collectionView.backgroundColors = [NSColor.clear]
+			addSubview(self.collectionView)
+			self.collectionView.reloadData()
 			
 			NotificationCenter.default.addObserver(self, selector: #selector(updateCurrentPageThumbnails), name: .PDFViewPageChanged, object: nil)
 		}
@@ -177,7 +177,7 @@ public class PDQThumbnailView: NSView {
 			self.resizeTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { [weak self] timer in
 				self?.updateItemSize(ignoreSmallChanges: false)
 			})
-			RunLoop.current.add(self.resizeTimer!, forMode: .eventTracking)
+			RunLoop.current.add(self.resizeTimer!, forMode: RunLoop.Mode.eventTracking)
 		} else {
 			self.previousSize = self.bounds.size
 		}
@@ -240,7 +240,6 @@ public class PDQThumbnailView: NSView {
 	}
 }
 
-@available(OSXApplicationExtension 10.13, *)
 extension PDQThumbnailView: NSCollectionViewDataSource {
 	open func numberOfSections(in collectionView: NSCollectionView) -> Int { return 1 }
 	open func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -259,11 +258,14 @@ extension PDQThumbnailView: NSCollectionViewDataSource {
 	}
 }
 
-@available(OSXApplicationExtension 10.13, *)
-extension PDQThumbnailView: NSCollectionViewDelegate {}
+extension PDQThumbnailView: NSCollectionViewDelegate {
+	open func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+		print(indexPaths)
+	}
+	
+}
 
 
-@available(OSXApplicationExtension 10.13, *)
 extension PDQThumbnailView {
 	class ThumbnailPageView: NSImageView {
 		var pageNumber: Int = 0
