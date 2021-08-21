@@ -35,7 +35,7 @@ public class PDQThumbnailView: NSView {
 	var pagesPerThumbnail = 1
 	let collectionViewLayout = NSCollectionViewFlowLayout()
 	let margins = NSEdgeInsets(top: 6, left: 3, bottom: 6, right: 3)
-	var imageHeight: CGFloat { return self.bounds.height - (self.margins.top + self.margins.bottom) }
+	var imageHeight: CGFloat { return max(40, self.bounds.height - (self.margins.top + self.margins.bottom)) }
 	var currentPageThumbnailViews: [ThumbnailPageView] = []
 	var backgroundView: NSView!
 	
@@ -82,8 +82,8 @@ public class PDQThumbnailView: NSView {
 			self.collectionViewLayout.sectionInset = NSEdgeInsets()
 			self.collectionViewLayout.scrollDirection = .horizontal
 			self.collectionView.collectionViewLayout = self.collectionViewLayout
-			self.collectionView.userInteractionEnabled = false
-			
+			self.collectionView.userInteractionEnabled = true
+
 			self.collectionView.backgroundColors = [NSColor.clear]
 			addSubview(self.collectionView)
 			self.collectionView.reloadData()
@@ -98,7 +98,7 @@ public class PDQThumbnailView: NSView {
 		self.collectionView.scrollView.horizontalScroller?.wantsLayer = true
 		self.collectionView.scrollView.horizontalScroller?.layer?.opacity = 0.0
 		self.collectionView.scrollView.horizontalScroller?.isHidden = true
-		if self.thumbnailSize == .zero { self.updateItemSize() }
+		self.updateItemSize()
 		self.collectionView.reloadData()
 	}
 	
