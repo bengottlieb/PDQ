@@ -10,7 +10,7 @@
 
 import UIKit
 
-class PDQThumbnailCollectionViewCell: UICollectionViewCell {
+class PDQThumbnailUICollectionViewCell: UICollectionViewCell {
 	@IBOutlet var imageView: UIImageView!
 	
 	static let identifier = "PDQThumbnailCollectionItem"

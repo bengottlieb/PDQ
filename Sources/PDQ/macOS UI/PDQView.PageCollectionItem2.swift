@@ -11,7 +11,7 @@
 import Cocoa
 
 
-extension PDQView {
+extension PDQNSView {
 	class PageCollectionViewItem: NSCollectionViewItem {
 	}
 }

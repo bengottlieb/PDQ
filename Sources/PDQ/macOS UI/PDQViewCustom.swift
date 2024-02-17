@@ -37,7 +37,7 @@ open class PDQViewCustom: NSView {
 		self.collectionView?.reloadData()
 	}}
 	
-	var collectionView: PDQCollectionView!
+	var collectionView: PDQNSCollectionView!
 	var firstVisiblePanelIndex = 0
 	let collectionViewLayout = NSCollectionViewFlowLayout()
 	
@@ -60,7 +60,7 @@ open class PDQViewCustom: NSView {
 	func setupCollectionView() {
 		if self.collectionView != nil { return }
 		
-		self.collectionView = PDQCollectionView.setup(in: self)
+		self.collectionView = PDQNSCollectionView.setup(in: self)
 		self.collectionViewLayout.itemSize = self.bounds.size
 		self.collectionViewLayout.minimumInteritemSpacing = 0
 		self.collectionViewLayout.minimumLineSpacing = 0

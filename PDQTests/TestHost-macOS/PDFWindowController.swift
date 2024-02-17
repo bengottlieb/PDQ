@@ -14,14 +14,14 @@ class PDFWindowController: NSWindowController, PDQViewDelegate, NSWindowDelegate
 		print("Clicked on \(url)")
 	}
 	
-	func setControls(visible: Bool, in: PDQView, with duration: TimeInterval) {
+	func setControls(visible: Bool, in: PDQNSView, with duration: TimeInterval) {
 		
 	}
 	
 	static var controllers: [PDFWindowController] = []
 	
-	@IBOutlet var thumbnailView: PDQThumbnailView!
-	@IBOutlet var pdfView: PDQView!
+	@IBOutlet var thumbnailView: PDQNSThumbnailUIView!
+	@IBOutlet var pdfView: PDQNSView!
 	public var rememberPositionByDocument = true
 	var pdf: PDQDocument?
 	var defaultsKey: String? { guard let id = self.pdf?.identifier else { return nil }; return "pdf-window-\(id)" }
@@ -89,13 +89,13 @@ class PDFWindowController: NSWindowController, PDQViewDelegate, NSWindowDelegate
 	}
 	
 //	@objc func highlightsChanged(note: Notification) {
-	func highlightsChanged(in view: PDQView) {
+	func highlightsChanged(in view: PDQNSView) {
 		let encoder = JSONEncoder()
 		let data = try! encoder.encode(self.pdfView.highlights)
 		UserDefaults.standard.set(data, forKey: "highlights")
 	}
 
-	func visiblePageChanged(in view: PDQView) {
+	func visiblePageChanged(in view: PDQNSView) {
 	//	print("page changed to: \(view.currentPage!.pageNumber)")
 	}
 	

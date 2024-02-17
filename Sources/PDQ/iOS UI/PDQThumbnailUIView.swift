@@ -12,7 +12,7 @@ import UIKit
 import PDFKit
 import CrossPlatformKit
 
-public class PDQThumbnailView: UIView {
+public class PDQThumbnailUIView: UIView {
 	var collectionView: UICollectionView!
 	var collectionViewLayout = UICollectionViewFlowLayout()
 	var document: PDQDocument? { didSet {
@@ -29,7 +29,7 @@ public class PDQThumbnailView: UIView {
 		if self.bounds.height == 0 { return 44 }
 		return self.bounds.height - (self.margins.top + self.margins.bottom)
 	}
-	weak var pdqView: PDQView?
+	weak var pdqView: PDQUIView?
 	var currentPageThumbnailViews: [ThumbnailPageView] = []
 
 	public override func layoutSubviews() {
@@ -42,8 +42,8 @@ public class PDQThumbnailView: UIView {
 			self.collectionView = UICollectionView(frame: CGRect(x: 0, y: verticalOffset, width: self.bounds.width, height: self.bounds.height - verticalOffset), collectionViewLayout: self.collectionViewLayout)
 			self.collectionViewLayout.minimumLineSpacing = 0
 			self.collectionViewLayout.minimumInteritemSpacing = 1
-			let nib = UINib(nibName: "PDQThumbnailCollectionViewCell", bundle: Bundle(for: PDQThumbnailCollectionViewCell.self))
-			self.collectionView.register(nib, forCellWithReuseIdentifier: PDQThumbnailCollectionViewCell.identifier)
+			let nib = UINib(nibName: "PDQThumbnailCollectionViewCell", bundle: Bundle(for: PDQThumbnailUICollectionViewCell.self))
+			self.collectionView.register(nib, forCellWithReuseIdentifier: PDQThumbnailUICollectionViewCell.identifier)
 			self.collectionView.delegate = self
 			self.collectionView.dataSource = self
 			self.addSubview(self.collectionView)
@@ -180,17 +180,17 @@ public class PDQThumbnailView: UIView {
 	}
 }
 
-extension PDQThumbnailView: UICollectionViewDelegate {
+extension PDQThumbnailUIView: UICollectionViewDelegate {
 	
 }
 
-extension PDQThumbnailView: UICollectionViewDataSource {
+extension PDQThumbnailUIView: UICollectionViewDataSource {
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return self.pagesToShow
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PDQThumbnailCollectionViewCell.identifier, for: indexPath) as! PDQThumbnailCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PDQThumbnailUICollectionViewCell.identifier, for: indexPath) as! PDQThumbnailUICollectionViewCell
 		
 		
 		cell.page = self.document?.page(at: indexPath.item * self.pagesPerImage)
@@ -198,7 +198,7 @@ extension PDQThumbnailView: UICollectionViewDataSource {
 	}
 }
 
-extension PDQThumbnailView {
+extension PDQThumbnailUIView {
 	class ThumbnailPageView: UIImageView {
 		var pageNumber: Int = 0
 	}

@@ -12,7 +12,7 @@ import PDFKit
 
 extension PDQDocument {
 	static var testDocument: PDQDocument {
-		let url = Bundle.main.url(forResource: "Mueller-Report", withExtension: "pdf")!
+		let url = Bundle.main.url(forResource: "CoreData", withExtension: "pdf")!
 		let doc = PDQDocument(url: url)
 		
 		return doc!
@@ -20,7 +20,7 @@ extension PDQDocument {
 }
 
 class ViewController: UIViewController, PDQViewDelegate {
-	var pdqView: PDQView!
+	var pdqView: PDQUIView!
 	var search: PDQSearch?
 
 	var testing = true
@@ -28,9 +28,9 @@ class ViewController: UIViewController, PDQViewDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		//NotificationCenter.default.addObserver(self, selector: #selector(highlightsChanged), name: PDQView.Notifications.pdfDidChangeHighlights, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(didChangeHighlights), name: PDQUIView.Notifications.pdfDidChangeHighlights, object: nil)
 		
-		self.pdqView = PDQView(frame: self.view.bounds, document: PDQDocument.testDocument)
+		self.pdqView = PDQUIView(frame: self.view.bounds, document: PDQDocument.testDocument)
 		self.view.addSubview(self.pdqView)
 		self.pdqView.delegate = self
 		self.pdqView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -43,9 +43,9 @@ class ViewController: UIViewController, PDQViewDelegate {
 		if self.testing {
 			if self.pdqView == nil {
 				self.pdqView.jump(to: 11, animated: true)
-				let search = PDQSearch(text: "dragon", in: self.pdqView.document!) { search, results in
+				let search = PDQSearch(text: "dragon", in: self.pdqView.document!, completion: { search, results in
 					self.showResult(results.first, from: search)
-				}
+				})
 
 				search.begin()
 			} else {
@@ -65,7 +65,7 @@ class ViewController: UIViewController, PDQViewDelegate {
 		guard let res = result?.next(in: self.pdqView) else { return }
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-			//self.showResult(res, from: search)
+			self.showResult(res, from: search)
 		}
 	}
 
@@ -74,23 +74,24 @@ class ViewController: UIViewController, PDQViewDelegate {
 		// Dispose of any resources that can be recreated.
 	}
 
-	@objc func highlightsChanged(note: Notification) {
+	@objc func didChangeHighlights(note: Notification) {
 		let encoder = JSONEncoder()
 		let data = try! encoder.encode(self.pdqView.highlights)
 		UserDefaults.standard.set(data, forKey: "highlights")
+		print(note)
 	}
 	
-	func visiblePageChanged(in view: PDQView) {
+	func visiblePageChanged(in view: PDQUIView) {
 		print("page changed to: \(view.currentPage!.pageNumber)")
 	}
 	
-	func highlightsChanged(in view: PDQView) {
+	func highlightsChanged(in view: PDQUIView) {
 		let encoder = JSONEncoder()
 		let data = try! encoder.encode(self.pdqView.highlights)
 		UserDefaults.standard.set(data, forKey: "highlights")
 	}
 	
-	func setControls(visible: Bool, in: PDQView, with duration: TimeInterval) {
+	func setControls(visible: Bool, in: PDQUIView, with duration: TimeInterval) {
 		UIView.animate(withDuration: duration) {
 			self.navigationController?.isNavigationBarHidden = !visible
 		}

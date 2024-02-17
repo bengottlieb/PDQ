@@ -9,7 +9,7 @@
 #if canImport(UIKit)
 import PDFKit
 
-public class PDQView: UIView {
+public class PDQUIView: UIView {
 	public var document: PDQDocument! { didSet {
 		self.thumbnailView?.document = self.document
 		self.pdfView?.document = self.document.document
@@ -20,7 +20,7 @@ public class PDQView: UIView {
 	public var pdfView: PDFView!
 	var controlsHidden = false
 	var pageNumberLabel: UILabel?
-	var thumbnailView: PDQThumbnailView!
+	var thumbnailView: PDQThumbnailUIView!
 	var editView: EditView!
 	public var useThumbnailView = false { didSet {
 		self.updateThumbnailView()
@@ -260,12 +260,12 @@ public class PDQView: UIView {
 }
 
 
-extension PDQView {
+extension PDQUIView {
 	func updateThumbnailView() {
 		if self.useThumbnailView {
 			if self.thumbnailView?.superview == nil {
 				if self.thumbnailView == nil {
-					self.thumbnailView = PDQThumbnailView(frame: .zero)
+					self.thumbnailView = PDQThumbnailUIView(frame: .zero)
 					self.thumbnailView.translatesAutoresizingMaskIntoConstraints = false
 					self.thumbnailView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 					self.thumbnailView.pdqView = self
@@ -284,13 +284,13 @@ extension PDQView {
 	}
 }
 
-extension PDQView: PDFViewDelegate {
+extension PDQUIView: PDFViewDelegate {
 	public func pdfViewWillClick(onLink sender: PDFView, with url: URL) {
 		self.delegate?.didClick(on: url)
 	}
 }
 
-extension PDQView: UIGestureRecognizerDelegate {
+extension PDQUIView: UIGestureRecognizerDelegate {
 	public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
 		return true
 	}

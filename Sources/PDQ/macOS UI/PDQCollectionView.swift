@@ -1,5 +1,5 @@
 //
-//  PDQCollectionView.swift
+//  PDQNSCollectionView.swift
 //  PDQ_macOS
 //
 //  Created by Ben Gottlieb on 1/17/18.
@@ -9,7 +9,7 @@
 #if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import Cocoa
 
-class PDQCollectionView: NSCollectionView {
+class PDQNSCollectionView: NSCollectionView {
 	var scrollView: NSScrollView!
 	var userInteractionEnabled = true
 	
@@ -31,7 +31,7 @@ class PDQCollectionView: NSCollectionView {
 		super.scrollWheel(with: event)
 	}
 	
-	class func setup(in parent: NSView, frame: CGRect? = nil) -> PDQCollectionView {
+	class func setup(in parent: NSView, frame: CGRect? = nil) -> PDQNSCollectionView {
 		let view = self.init()
 		view.autoresizingMask = [.height, .width]
 		

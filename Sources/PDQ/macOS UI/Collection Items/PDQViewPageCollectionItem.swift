@@ -13,13 +13,13 @@ import Cocoa
 class PDQViewPageCollectionItem: NSCollectionViewItem {
 	static let identifier = NSUserInterfaceItemIdentifier(rawValue: "PDQViewPageCollectionItem")
 	
-	var pageViews: [PDQPageView] = []
+	var pageViews: [PDQPageNSView] = []
 	var pages: [PDQPage] = [] { didSet { self.updateUI() }}
 	var showTwoPages = false
 	
 	func updateUI() {
 		while self.pageViews.count < self.pages.count {
-			let pageView = PDQPageView(frame: self.view.bounds)
+			let pageView = PDQPageNSView(frame: self.view.bounds)
 			self.view.addSubview(pageView)
 			self.pageViews.append(pageView)
 		}

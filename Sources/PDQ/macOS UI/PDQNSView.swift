@@ -10,7 +10,7 @@
 import Cocoa
 import Quartz
 
-open class PDQView: NSView {
+open class PDQNSView: NSView {
 	
 	open var document: PDQDocument! { didSet {
 		self.thumbnailView?.document = self.document
@@ -23,7 +23,7 @@ open class PDQView: NSView {
 	
 	public weak var delegate: PDQViewDelegate?
 	var pdfView: PDFView!
-	var thumbnailView: PDQThumbnailView!
+	var thumbnailView: PDQNSThumbnailUIView!
 	var controlsHidden = false
 	var thumbnailBottomConstraint: NSLayoutConstraint!
 	var initialScrollPage: Int?
@@ -155,7 +155,7 @@ open class PDQView: NSView {
 	public weak var pageForContextualMenu: PDQPage?
 }
 
-extension PDQView: PDQThumbnailTarget {
+extension PDQNSView: PDQThumbnailTarget {
 	public func jump(to pageNumber: Int, animated: Bool) {
 		if let page = self.document.page(at: pageNumber)?.page {
 			self.pdfView?.go(to: PDFDestination(page: page, at: .zero))
@@ -182,7 +182,7 @@ extension PDQView: PDQThumbnailTarget {
 	}
 }
 
-extension PDQView {
+extension PDQNSView {
 	@IBAction func goToNextPage(_ sender: Any?) {
 		guard let pageNumber = self.currentPage?.pageNumber else { return }
 		self.jump(to: pageNumber + 1, animated: true)
@@ -232,7 +232,7 @@ extension PDQView {
 	}
 }
 
-extension PDQView {
+extension PDQNSView {
 	@objc func willStartLiveScroll(note: Notification) {
 		self.initialScrollPage = self.currentPage?.pageNumber
 		self.showPageNumber()
@@ -269,10 +269,10 @@ extension PDQView {
 	}
 }
 
-extension PDQView {
+extension PDQNSView {
 	class PDQWrapperView: PDFView {
 		override func menu(for event: NSEvent) -> NSMenu? {
-			guard let pdqView = self.superview as? PDQView, let contentView = self.window?.contentView else { return nil }
+			guard let pdqView = self.superview as? PDQNSView, let contentView = self.window?.contentView else { return nil }
 			
 			let location = self.convert(event.locationInWindow, from: contentView)
 			guard let page = pdqView.document.page(from: self.page(for: location, nearest: true)) else { return nil }
@@ -284,12 +284,12 @@ extension PDQView {
 	}
 }
 
-extension PDQView {
+extension PDQNSView {
 	func updateThumbnailView() {
 		if self.useThumbnailView {
 			if self.thumbnailView?.superview == nil {
 				if self.thumbnailView == nil {
-					self.thumbnailView = PDQThumbnailView(frame: .zero)
+					self.thumbnailView = PDQNSThumbnailUIView(frame: .zero)
 					self.thumbnailView.translatesAutoresizingMaskIntoConstraints = false
 					self.thumbnailView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 				}
@@ -309,14 +309,14 @@ extension PDQView {
 	}
 }
 
-extension PDQView: PDFViewDelegate {
+extension PDQNSView: PDFViewDelegate {
 	public func pdfViewWillClick(onLink sender: PDFView, with url: URL) {
 		self.contentClickedTimer?.invalidate()
 		self.delegate?.didClick(on: url)
 	}
 }
 
-extension PDQView: NSGestureRecognizerDelegate {
+extension PDQNSView: NSGestureRecognizerDelegate {
 	public func gestureRecognizer(_ gestureRecognizer: NSGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: NSGestureRecognizer) -> Bool {
 		return true
 	}

@@ -22,11 +22,11 @@ public class PDQSearchResult: Equatable {
 		self.selection = selection
 	}
 	
-	public func show(in view: PDQView) {
+	public func show(in view: PDQUXView) {
 		view.showSearchResult(self)
 	}
 	
-	public func next(in view: PDQView) -> PDQSearchResult? {
+	public func next(in view: PDQUXView) -> PDQSearchResult? {
 		guard let next = self.search?.next(from: self) else { return nil }
 		
 		next.show(in: view)

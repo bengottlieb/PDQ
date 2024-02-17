@@ -19,7 +19,7 @@ public protocol PDQThumbnailTarget: AnyObject {
 	var visiblePages: [PDQPage] { get }
 }
 
-public class PDQThumbnailView: NSView {
+public class PDQNSThumbnailUIView: NSView {
 	public var thumbnailTarget: PDQThumbnailTarget!
 	
 	public var document: PDQDocument? { didSet { 
@@ -30,7 +30,7 @@ public class PDQThumbnailView: NSView {
 	}}
 	var isDebuggingLayout = false
 	var thumbnailSize: CGSize = .zero
-	var collectionView: PDQCollectionView!
+	var collectionView: PDQNSCollectionView!
 	var thumbnailsToShow = 1
 	var pagesPerThumbnail = 1
 	let collectionViewLayout = NSCollectionViewFlowLayout()
@@ -211,9 +211,9 @@ public class PDQThumbnailView: NSView {
 	open override var frame: CGRect { didSet { self.updateItemSize(ignoreSmallChanges: true) }}
 	open override var bounds: CGRect { didSet { self.updateItemSize(ignoreSmallChanges: true) }}
 
-	class PDQThumbnailCollectionView: PDQCollectionView {
+	class PDQThumbnailCollectionView: PDQNSCollectionView {
 		override func mouseDown(with event: NSEvent) {
-			guard let thumbview = self.enclosingScrollView?.superview as? PDQThumbnailView else { return }
+			guard let thumbview = self.enclosingScrollView?.superview as? PDQNSThumbnailUIView else { return }
 			thumbview.thumbnailTarget?.startScrolling()
 			
 			while true {
@@ -240,7 +240,7 @@ public class PDQThumbnailView: NSView {
 	}
 }
 
-extension PDQThumbnailView: NSCollectionViewDataSource {
+extension PDQNSThumbnailUIView: NSCollectionViewDataSource {
 	open func numberOfSections(in collectionView: NSCollectionView) -> Int { return 1 }
 	open func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
 		return self.thumbnailsToShow
@@ -258,7 +258,7 @@ extension PDQThumbnailView: NSCollectionViewDataSource {
 	}
 }
 
-extension PDQThumbnailView: NSCollectionViewDelegate {
+extension PDQNSThumbnailUIView: NSCollectionViewDelegate {
 	open func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
 		print(indexPaths)
 	}
@@ -266,7 +266,7 @@ extension PDQThumbnailView: NSCollectionViewDelegate {
 }
 
 
-extension PDQThumbnailView {
+extension PDQNSThumbnailUIView {
 	class ThumbnailPageView: NSImageView {
 		var pageNumber: Int = 0
 	}

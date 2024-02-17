@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension PDQView {
+extension PDQUXView {
 	public struct Notifications {
 		public static let pdfDidChangeHighlights = Notification.Name("PDQ:pdfDidChangeHighlights")			// object is the PDF
 	}

@@ -10,7 +10,7 @@
 import Cocoa
 import Quartz
 
-extension PDQView {
+extension PDQNSView {
 	func buildContextualMenu(for page: PDQPage?, at point: CGPoint) -> NSMenu {
 		let menu = NSMenu()
 		

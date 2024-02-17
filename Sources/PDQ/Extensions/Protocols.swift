@@ -9,8 +9,8 @@
 import Foundation
 
 public protocol PDQViewDelegate: AnyObject {
-	func highlightsChanged(in: PDQView)
-	func visiblePageChanged(in: PDQView)
-	func setControls(visible: Bool, in: PDQView, with duration: TimeInterval)
+	func highlightsChanged(in: PDQUXView)
+	func visiblePageChanged(in: PDQUXView)
+	func setControls(visible: Bool, in: PDQUXView, with duration: TimeInterval)
 	func didClick(on url: URL)
 }

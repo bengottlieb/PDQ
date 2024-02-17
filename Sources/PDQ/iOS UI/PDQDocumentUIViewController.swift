@@ -10,9 +10,9 @@
 
 import UIKit
 
-open class PDQDocumentViewController: UIViewController {
+open class PDQDocumentUIViewController: UIViewController {
 	public var document: PDQDocument! { didSet { self.pdqView.document = self.document }}
-	public var pdqView: PDQView!
+	public var pdqView: PDQUIView!
 	
 	public var firstVisiblePageNumber: Int {
 		set { self.pdqView.firstVisiblePageNumber = newValue }
@@ -24,7 +24,7 @@ open class PDQDocumentViewController: UIViewController {
 	}
 	
 	open override func loadView() {
-		self.pdqView = PDQView(frame: UIScreen.main.bounds, document: self.document)
+		self.pdqView = PDQUIView(frame: UIScreen.main.bounds, document: self.document)
 		self.pdqView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		self.pdqView.backgroundColor = .white
 		self.view = self.pdqView

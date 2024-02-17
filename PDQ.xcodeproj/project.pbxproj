@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -42,14 +42,14 @@
 		B51D5D711F221E1600D096C3 /* PDFWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51D5D6F1F221E1600D096C3 /* PDFWindowController.xib */; };
 		B5B088B81F1F6F7D00CB8D40 /* PDQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B088AE1F1F6F7D00CB8D40 /* PDQ.framework */; };
 		B5B088BD1F1F6F7D00CB8D40 /* PDQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B088BC1F1F6F7D00CB8D40 /* PDQTests.swift */; };
-		B5B8774F23B95A9400C0DEE2 /* PDQDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772823B95A9400C0DEE2 /* PDQDocumentViewController.swift */; };
-		B5B8775123B95A9500C0DEE2 /* PDQView.EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772923B95A9400C0DEE2 /* PDQView.EditView.swift */; };
-		B5B8775323B95A9500C0DEE2 /* PDQThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772B23B95A9400C0DEE2 /* PDQThumbnailCollectionViewCell.swift */; };
+		B5B8774F23B95A9400C0DEE2 /* PDQDocumentUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772823B95A9400C0DEE2 /* PDQDocumentUIViewController.swift */; };
+		B5B8775123B95A9500C0DEE2 /* PDQUIView.EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772923B95A9400C0DEE2 /* PDQUIView.EditView.swift */; };
+		B5B8775323B95A9500C0DEE2 /* PDQThumbnailUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772B23B95A9400C0DEE2 /* PDQThumbnailUICollectionViewCell.swift */; };
 		B5B8775523B95A9500C0DEE2 /* PDQThumbnailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B8772C23B95A9400C0DEE2 /* PDQThumbnailCollectionViewCell.xib */; };
-		B5B8775723B95A9500C0DEE2 /* PDQThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772D23B95A9400C0DEE2 /* PDQThumbnailView.swift */; };
-		B5B8775923B95A9500C0DEE2 /* PDQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772E23B95A9400C0DEE2 /* PDQView.swift */; };
-		B5B8775C23B95A9500C0DEE2 /* PDQView_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773023B95A9400C0DEE2 /* PDQView_macOS.swift */; };
-		B5B8775E23B95A9500C0DEE2 /* PDQThumbnailView_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773123B95A9400C0DEE2 /* PDQThumbnailView_macOS.swift */; };
+		B5B8775723B95A9500C0DEE2 /* PDQThumbnailUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772D23B95A9400C0DEE2 /* PDQThumbnailUIView.swift */; };
+		B5B8775923B95A9500C0DEE2 /* PDQUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772E23B95A9400C0DEE2 /* PDQUIView.swift */; };
+		B5B8775C23B95A9500C0DEE2 /* PDQNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773023B95A9400C0DEE2 /* PDQNSView.swift */; };
+		B5B8775E23B95A9500C0DEE2 /* PDQNSThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773123B95A9400C0DEE2 /* PDQNSThumbnailView.swift */; };
 		B5B8776023B95A9500C0DEE2 /* PDQCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773223B95A9400C0DEE2 /* PDQCollectionView.swift */; };
 		B5B8776223B95A9500C0DEE2 /* PDQView+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773323B95A9400C0DEE2 /* PDQView+Menu.swift */; };
 		B5B8776423B95A9500C0DEE2 /* PDQViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773423B95A9400C0DEE2 /* PDQViewCustom.swift */; };
@@ -94,6 +94,8 @@
 		B5E6DD3B1F3FE5DD00FBCCE4 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E6DD3A1F3FE5DD00FBCCE4 /* Quartz.framework */; };
 		B5E6DD3C1F3FE5ED00FBCCE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E6DD381F3FE5D700FBCCE4 /* Foundation.framework */; };
 		B5E6DD3D1F3FE5F200FBCCE4 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E6DD3A1F3FE5DD00FBCCE4 /* Quartz.framework */; };
+		B5E88E022B80CDBA0077CF48 /* PDQUXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E88E012B80CDBA0077CF48 /* PDQUXView.swift */; };
+		B5E88E032B80CDBA0077CF48 /* PDQUXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E88E012B80CDBA0077CF48 /* PDQUXView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,14 +169,14 @@
 		B5B088BC1F1F6F7D00CB8D40 /* PDQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDQTests.swift; sourceTree = "<group>"; };
 		B5B088BE1F1F6F7D00CB8D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5B088D11F1F706900CB8D40 /* PDQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PDQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5B8772823B95A9400C0DEE2 /* PDQDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQDocumentViewController.swift; sourceTree = "<group>"; };
-		B5B8772923B95A9400C0DEE2 /* PDQView.EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQView.EditView.swift; sourceTree = "<group>"; };
-		B5B8772B23B95A9400C0DEE2 /* PDQThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5B8772823B95A9400C0DEE2 /* PDQDocumentUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQDocumentUIViewController.swift; sourceTree = "<group>"; };
+		B5B8772923B95A9400C0DEE2 /* PDQUIView.EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQUIView.EditView.swift; sourceTree = "<group>"; };
+		B5B8772B23B95A9400C0DEE2 /* PDQThumbnailUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQThumbnailUICollectionViewCell.swift; sourceTree = "<group>"; };
 		B5B8772C23B95A9400C0DEE2 /* PDQThumbnailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDQThumbnailCollectionViewCell.xib; sourceTree = "<group>"; };
-		B5B8772D23B95A9400C0DEE2 /* PDQThumbnailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQThumbnailView.swift; sourceTree = "<group>"; };
-		B5B8772E23B95A9400C0DEE2 /* PDQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQView.swift; sourceTree = "<group>"; };
-		B5B8773023B95A9400C0DEE2 /* PDQView_macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQView_macOS.swift; sourceTree = "<group>"; };
-		B5B8773123B95A9400C0DEE2 /* PDQThumbnailView_macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQThumbnailView_macOS.swift; sourceTree = "<group>"; };
+		B5B8772D23B95A9400C0DEE2 /* PDQThumbnailUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQThumbnailUIView.swift; sourceTree = "<group>"; };
+		B5B8772E23B95A9400C0DEE2 /* PDQUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQUIView.swift; sourceTree = "<group>"; };
+		B5B8773023B95A9400C0DEE2 /* PDQNSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQNSView.swift; sourceTree = "<group>"; };
+		B5B8773123B95A9400C0DEE2 /* PDQNSThumbnailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQNSThumbnailView.swift; sourceTree = "<group>"; };
 		B5B8773223B95A9400C0DEE2 /* PDQCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQCollectionView.swift; sourceTree = "<group>"; };
 		B5B8773323B95A9400C0DEE2 /* PDQView+Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PDQView+Menu.swift"; sourceTree = "<group>"; };
 		B5B8773423B95A9400C0DEE2 /* PDQViewCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDQViewCustom.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		B5D735B01F20C0980099F101 /* ICC Spec.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ICC Spec.pdf"; sourceTree = "<group>"; };
 		B5E6DD381F3FE5D700FBCCE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B5E6DD3A1F3FE5DD00FBCCE4 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Quartz.framework; sourceTree = DEVELOPER_DIR; };
+		B5E88E012B80CDBA0077CF48 /* PDQUXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDQUXView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,11 +356,11 @@
 		B5B8772723B95A9400C0DEE2 /* iOS UI */ = {
 			isa = PBXGroup;
 			children = (
-				B5B8772823B95A9400C0DEE2 /* PDQDocumentViewController.swift */,
-				B5B8772923B95A9400C0DEE2 /* PDQView.EditView.swift */,
+				B5B8772823B95A9400C0DEE2 /* PDQDocumentUIViewController.swift */,
+				B5B8772923B95A9400C0DEE2 /* PDQUIView.EditView.swift */,
 				B5B8772A23B95A9400C0DEE2 /* Collection Items */,
-				B5B8772D23B95A9400C0DEE2 /* PDQThumbnailView.swift */,
-				B5B8772E23B95A9400C0DEE2 /* PDQView.swift */,
+				B5B8772D23B95A9400C0DEE2 /* PDQThumbnailUIView.swift */,
+				B5B8772E23B95A9400C0DEE2 /* PDQUIView.swift */,
 			);
 			path = "iOS UI";
 			sourceTree = "<group>";
@@ -365,7 +368,7 @@
 		B5B8772A23B95A9400C0DEE2 /* Collection Items */ = {
 			isa = PBXGroup;
 			children = (
-				B5B8772B23B95A9400C0DEE2 /* PDQThumbnailCollectionViewCell.swift */,
+				B5B8772B23B95A9400C0DEE2 /* PDQThumbnailUICollectionViewCell.swift */,
 				B5B8772C23B95A9400C0DEE2 /* PDQThumbnailCollectionViewCell.xib */,
 			);
 			path = "Collection Items";
@@ -374,8 +377,8 @@
 		B5B8772F23B95A9400C0DEE2 /* macOS UI */ = {
 			isa = PBXGroup;
 			children = (
-				B5B8773023B95A9400C0DEE2 /* PDQView_macOS.swift */,
-				B5B8773123B95A9400C0DEE2 /* PDQThumbnailView_macOS.swift */,
+				B5B8773023B95A9400C0DEE2 /* PDQNSView.swift */,
+				B5B8773123B95A9400C0DEE2 /* PDQNSThumbnailView.swift */,
 				B5B8773223B95A9400C0DEE2 /* PDQCollectionView.swift */,
 				B5B8773323B95A9400C0DEE2 /* PDQView+Menu.swift */,
 				B5B8773423B95A9400C0DEE2 /* PDQViewCustom.swift */,
@@ -407,6 +410,7 @@
 				B5B8774223B95A9400C0DEE2 /* Protocols.swift */,
 				B5B8774323B95A9400C0DEE2 /* PDFPage+PDQ.swift */,
 				B5B8774423B95A9400C0DEE2 /* UIView+PDQ.swift */,
+				B5E88E012B80CDBA0077CF48 /* PDQUXView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -750,17 +754,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B8777923B95A9500C0DEE2 /* Notifications.swift in Sources */,
-				B5B8775123B95A9500C0DEE2 /* PDQView.EditView.swift in Sources */,
+				B5B8775123B95A9500C0DEE2 /* PDQUIView.EditView.swift in Sources */,
 				B5B8777723B95A9500C0DEE2 /* PDFAnnotation+PDQ.swift in Sources */,
-				B5B8775723B95A9500C0DEE2 /* PDQThumbnailView.swift in Sources */,
+				B5B8775723B95A9500C0DEE2 /* PDQThumbnailUIView.swift in Sources */,
 				B5B8778323B95A9500C0DEE2 /* PDQHighlights.swift in Sources */,
 				B5B8778723B95A9500C0DEE2 /* PDQDocument.swift in Sources */,
-				B5B8774F23B95A9400C0DEE2 /* PDQDocumentViewController.swift in Sources */,
+				B5B8774F23B95A9400C0DEE2 /* PDQDocumentUIViewController.swift in Sources */,
 				B5B8777D23B95A9500C0DEE2 /* PDFPage+PDQ.swift in Sources */,
 				B5B8778123B95A9500C0DEE2 /* PDQPage.swift in Sources */,
-				B5B8775923B95A9500C0DEE2 /* PDQView.swift in Sources */,
+				B5E88E022B80CDBA0077CF48 /* PDQUXView.swift in Sources */,
+				B5B8775923B95A9500C0DEE2 /* PDQUIView.swift in Sources */,
 				B5B8777F23B95A9500C0DEE2 /* UIView+PDQ.swift in Sources */,
-				B5B8775323B95A9500C0DEE2 /* PDQThumbnailCollectionViewCell.swift in Sources */,
+				B5B8775323B95A9500C0DEE2 /* PDQThumbnailUICollectionViewCell.swift in Sources */,
 				B5B8777B23B95A9500C0DEE2 /* Protocols.swift in Sources */,
 				B5B8777523B95A9500C0DEE2 /* PDFDocument+Annotations.swift in Sources */,
 				B5B8777323B95A9500C0DEE2 /* PDFView+Highlights.swift in Sources */,
@@ -783,8 +788,9 @@
 			files = (
 				B5B8777023B95A9500C0DEE2 /* PDQView.PageCollectionItem2.swift in Sources */,
 				B5B8777A23B95A9500C0DEE2 /* Notifications.swift in Sources */,
-				B5B8775E23B95A9500C0DEE2 /* PDQThumbnailView_macOS.swift in Sources */,
+				B5B8775E23B95A9500C0DEE2 /* PDQNSThumbnailView.swift in Sources */,
 				B5B8777823B95A9500C0DEE2 /* PDFAnnotation+PDQ.swift in Sources */,
+				B5E88E032B80CDBA0077CF48 /* PDQUXView.swift in Sources */,
 				B5B8778423B95A9500C0DEE2 /* PDQHighlights.swift in Sources */,
 				B5B8777223B95A9500C0DEE2 /* PDQPageView.swift in Sources */,
 				B5B8778823B95A9500C0DEE2 /* PDQDocument.swift in Sources */,
@@ -793,7 +799,7 @@
 				B5B8778223B95A9500C0DEE2 /* PDQPage.swift in Sources */,
 				B5B8776E23B95A9500C0DEE2 /* NSCollectionView+PDQ.swift in Sources */,
 				B5B8778023B95A9500C0DEE2 /* UIView+PDQ.swift in Sources */,
-				B5B8775C23B95A9500C0DEE2 /* PDQView_macOS.swift in Sources */,
+				B5B8775C23B95A9500C0DEE2 /* PDQNSView.swift in Sources */,
 				B5B8776023B95A9500C0DEE2 /* PDQCollectionView.swift in Sources */,
 				B5B8776623B95A9500C0DEE2 /* PDQViewPageCollectionItem.swift in Sources */,
 				B5B8777C23B95A9500C0DEE2 /* Protocols.swift in Sources */,
@@ -871,7 +877,7 @@
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/PDQTests/TestHost-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -900,7 +906,7 @@
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/PDQTests/TestHost-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -929,7 +935,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.TestHost-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -954,7 +960,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.TestHost-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1104,6 +1110,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Infrastructure/iOS Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1135,6 +1142,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Infrastructure/iOS Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1153,6 +1161,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				INFOPLIST_FILE = PDQTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1169,6 +1178,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				INFOPLIST_FILE = PDQTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1205,7 +1215,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.PDQ-macOS";
 				PRODUCT_MODULE_NAME = PDQ;
 				PRODUCT_NAME = PDQ;
@@ -1241,7 +1251,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.PDQ-macOS";
 				PRODUCT_MODULE_NAME = PDQ;
 				PRODUCT_NAME = PDQ;

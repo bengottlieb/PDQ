@@ -1,5 +1,5 @@
 //
-//  PDQPageView.swift
+//  PDQPageNSView.swift
 //  PDQ_macOS
 //
 //  Created by Ben Gottlieb on 1/15/18.
@@ -11,7 +11,7 @@ import Cocoa
 import Quartz
 import CrossPlatformKit
 
-class PDQPageView: NSView {
+class PDQPageNSView: NSView {
 	var page: PDQPage? { didSet {
 		if self.page == oldValue { return }
 		self.hidePDFView()

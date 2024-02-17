@@ -10,7 +10,7 @@
 
 import UIKit
 
-extension PDQView {
+extension PDQUIView {
 	public enum EditMode { case layoutFrame(CGPoint?, CGSize?) }
 
 	public func beginEditing(mode: EditMode = .layoutFrame(nil, nil)) {
