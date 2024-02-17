@@ -15,11 +15,9 @@ import CrossPlatformKit
 public class PDQThumbnailUIView: UIView {
 	var collectionView: UICollectionView!
 	var collectionViewLayout = UICollectionViewFlowLayout()
-	var document: PDQDocument? { didSet {
+	@MainActor var document: PDQDocument? { didSet {
 		self.updateUI()
-		DispatchQueue.main.async {
-			self.updateCurrentPageThumbnails()
-		}
+		self.updateCurrentPageThumbnails()
 	}}
 	var thumbnailSize: CGSize = .zero
 	var pagesToShow = 1

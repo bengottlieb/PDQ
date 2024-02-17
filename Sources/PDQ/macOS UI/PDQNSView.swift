@@ -12,10 +12,7 @@ import Quartz
 
 open class PDQNSView: NSView {
 	
-	open var document: PDQDocument! { didSet {
-		self.thumbnailView?.document = self.document
-		self.setupInternalView()
-	}}
+	open var document: PDQDocument! { didSet { updateDocument() }}
 	
 	public var useThumbnailView = false { didSet { self.updateThumbnailView() }}
 	
@@ -31,6 +28,17 @@ open class PDQNSView: NSView {
 	weak var contentClickedTimer: Timer?
 	var scrollHorizontally: Bool {
 		return self.pdfView?.displayDirection == .horizontal
+	}
+	
+	convenience public init(frame: CGRect, document: PDQDocument) {
+		self.init(frame: frame)
+		self.document = document
+		updateDocument()
+	}
+	
+	func updateDocument() {
+		thumbnailView?.document = document
+		setupInternalView()
 	}
 	
 	public func showSearchResult(_ result: PDQSearchResult) {

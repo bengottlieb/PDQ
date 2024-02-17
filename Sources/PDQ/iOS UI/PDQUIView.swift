@@ -221,25 +221,23 @@ public class PDQUIView: UIView {
 		return []
 	}
 	
-	func startScrolling() {
-		DispatchQueue.main.async {
-			if self.pageNumberLabel == nil {
-				self.pageNumberLabel = UILabel(frame: .zero)
-				self.pageNumberLabel?.backgroundColor = UIColor(white: 0.3, alpha: 0.3)
-				self.pageNumberLabel?.textColor = .white
-				self.pageNumberLabel?.textAlignment = .center
-				self.pageNumberLabel?.adjustsFontSizeToFitWidth = true
-				self.pageNumberLabel?.minimumScaleFactor = 0.5
-				
-				self.addSubview(self.pageNumberLabel!)
-				self.pageNumberLabel?.translatesAutoresizingMaskIntoConstraints = false
-				self.pageNumberLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-				self.pageNumberLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -200).isActive = true
-				self.pageNumberLabel?.widthAnchor.constraint(equalToConstant: 120).isActive = true
-				self.pageNumberLabel?.heightAnchor.constraint(equalToConstant: 70).isActive = true
+	@MainActor func startScrolling() {
+		if self.pageNumberLabel == nil {
+			self.pageNumberLabel = UILabel(frame: .zero)
+			self.pageNumberLabel?.backgroundColor = UIColor(white: 0.3, alpha: 0.3)
+			self.pageNumberLabel?.textColor = .white
+			self.pageNumberLabel?.textAlignment = .center
+			self.pageNumberLabel?.adjustsFontSizeToFitWidth = true
+			self.pageNumberLabel?.minimumScaleFactor = 0.5
+			
+			self.addSubview(self.pageNumberLabel!)
+			self.pageNumberLabel?.translatesAutoresizingMaskIntoConstraints = false
+			self.pageNumberLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+			self.pageNumberLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -200).isActive = true
+			self.pageNumberLabel?.widthAnchor.constraint(equalToConstant: 120).isActive = true
+			self.pageNumberLabel?.heightAnchor.constraint(equalToConstant: 70).isActive = true
 
-				self.pageNumberLabel?.font = UIFont.boldSystemFont(ofSize: 60)
-			}
+			self.pageNumberLabel?.font = UIFont.boldSystemFont(ofSize: 60)
 			
 			self.pageNumberLabel?.isHidden = false
 			self.pageNumberLabel?.text = "\((self.currentPage?.pageNumber ?? 0) + 1)"

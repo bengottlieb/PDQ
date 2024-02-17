@@ -21,7 +21,7 @@ let package = Package(
         // and from where they can be fetched:
         .package(
             url: "https://github.com/bengottlieb/CrossPlatformKit",
-            from: "1.0.1"
+            from: "1.0.10"
         )
     ],
     targets: [
