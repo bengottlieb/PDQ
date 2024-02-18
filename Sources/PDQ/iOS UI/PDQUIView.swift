@@ -51,6 +51,10 @@ public class PDQUIView: UIView {
 		let recog = UITapGestureRecognizer(target: self, action: #selector(tapped))
 		recog.delegate = self
 		self.pdfView.addGestureRecognizer(recog)
+		
+		if #available(iOS 16.0, *) {
+			self.pdfView.addInteraction(UIEditMenuInteraction(delegate: self))
+		}
 	}
 	
 	public override var frame: CGRect { didSet { self.didChangeFrame() }}
@@ -138,15 +142,19 @@ public class PDQUIView: UIView {
 	}
 
 	@objc func selectionChanged() {
-		var items: [UIMenuItem] = []
-		
-		if let selection = self.pdfView.currentSelection, self.pdfView.annotationsIntersecting(selection).count > 0 {
-			items.append(UIMenuItem(title: NSLocalizedString("Un-Highlight", comment: "Un-Highlight"), action: #selector(removeHighlightFromSelection)))
+		if #available(iOS 16.0, visionOS 1.0, *) {
+			
 		} else {
-			items.append(UIMenuItem(title: NSLocalizedString("Highlight", comment: "Highlight"), action: #selector(highlightSelection)))
+			var items: [UIMenuItem] = []
+			
+			if let selection = self.pdfView.currentSelection, self.pdfView.annotationsIntersecting(selection).count > 0 {
+				items.append(UIMenuItem(title: NSLocalizedString("Un-Highlight", comment: "Un-Highlight"), action: #selector(removeHighlightFromSelection)))
+			} else {
+				items.append(UIMenuItem(title: NSLocalizedString("Highlight", comment: "Highlight"), action: #selector(highlightSelection)))
+			}
+			
+			UIMenuController.shared.menuItems = items
 		}
-		
-		UIMenuController.shared.menuItems = items
 	}
 	
 	@objc func highlightSelection() {
@@ -303,3 +311,27 @@ fileprivate func convertFromUIPageViewControllerOptionsKey(_ input: UIPageViewCo
 	return input.rawValue
 }
 #endif
+
+@available(iOS 16.0, *)
+extension PDQUIView: UIEditMenuInteractionDelegate {
+	public func editMenuInteraction(_ interaction: UIEditMenuInteraction, menuFor configuration: UIEditMenuConfiguration, suggestedActions: [UIMenuElement]) -> UIMenu? {
+		
+		var actions = suggestedActions
+		var newActions: [UIAction] = []
+		
+		if let selection = self.pdfView.currentSelection, self.pdfView.annotationsIntersecting(selection).count > 0 {
+			newActions.append(UIAction(title: NSLocalizedString("Un-Highlight", comment: "Un-Highlight")) { _ in
+				self.removeHighlightFromSelection()
+			})
+		} else {
+			newActions.append(UIAction(title: NSLocalizedString("Highlight!!!!", comment: "Highlight")) { _ in
+				self.highlightSelection()
+			})
+		}
+		
+		let newMenu = UIMenu(title: "", options: .displayInline, children: newActions)
+		actions.append(newMenu)
+		
+		return UIMenu(children: actions)
+	}
+}

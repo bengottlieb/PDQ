@@ -10,10 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack {
+			  Color.blue
+				  .frame(maxWidth: .infinity, maxHeight: .infinity)
+				  .layoutPriority(10)
+				  .ignoresSafeArea()
+
 			  PDQView(pdf: .testDocument)
         }
         .padding()
+		  .background(.red)
     }
 }
 

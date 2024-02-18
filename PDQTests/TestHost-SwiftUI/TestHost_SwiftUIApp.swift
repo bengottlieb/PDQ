@@ -14,5 +14,6 @@ struct TestHost_SwiftUIApp: App {
         WindowGroup {
             ContentView()
         }
+		  .defaultSize(width: 1000, height: 1000)
     }
 }

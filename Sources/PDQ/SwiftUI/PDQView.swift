@@ -11,16 +11,18 @@ import CrossPlatformKit
 
 public struct PDQView: UXViewRepresentable {
 	let pdf: PDQDocument
+	public typealias UXViewType = UXView
+
 	
 	public init(pdf: PDQDocument) {
 		self.pdf = pdf
 	}
 	
-	public func makeUXView(context: Context) -> PDQUXView {
+	public func makeUXView(context: Context) -> UXViewType {
 		context.coordinator.view
 	}
 	
-	public func updateUXView(_ uiView: PDQUXView, context: Context) {
+	public func updateUXView(_ uiView: UXViewType, context: Context) {
 		
 	}
 	
@@ -34,7 +36,8 @@ public struct PDQView: UXViewRepresentable {
 		
 		init(pdf: PDQDocument) {
 			self.pdf = pdf
-			self.view = PDQUXView(frame: CGRect(x: 0, y: 0, width: 100, height: 300), document: pdf)
+			self.view = PDQUXView(frame: CGRect(x: 0, y: 0, width: 300, height: 300), document: pdf)
+			self.view.autoresizingMask = [ .flexibleWidth, .flexibleHeight ]
 		}
 	}
 	
