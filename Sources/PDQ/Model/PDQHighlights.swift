@@ -9,7 +9,7 @@
 import Foundation
 import CrossPlatformKit
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 	import PDFKit
 #else
 	import Quartz

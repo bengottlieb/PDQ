@@ -7,7 +7,7 @@
 //
 
 import Foundation
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 	import PDFKit
 #else
 	import Quartz
@@ -59,7 +59,7 @@ public class PDQSearch: Equatable {
 		}
 		if selection == nil { return nil }
 		
-		#if os(iOS)
+		#if os(iOS) || os(visionOS)
 			if let result = self.document.document.findString(self.searchText, fromSelection: selection, withOptions: self.searchCompareOptions) {
 				self.lastResult = PDQSearchResult(selection: result, in: self)
 			}
@@ -93,7 +93,7 @@ public class PDQSearch: Equatable {
 	@discardableResult public func begin() -> Bool {
 		guard let doc = self.document.document else { return false }
 		
-		#if os(iOS)
+		#if os(iOS) || os(visionOS)
 			doc.beginFindString(self.searchText, withOptions: .caseInsensitive)
 		#else
 			doc.beginFindString(self.searchText, withOptions: .caseInsensitive)

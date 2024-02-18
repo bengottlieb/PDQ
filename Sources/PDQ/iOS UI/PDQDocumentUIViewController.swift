@@ -24,7 +24,7 @@ open class PDQDocumentUIViewController: UIViewController {
 	}
 	
 	open override func loadView() {
-		self.pdqView = PDQUIView(frame: UIScreen.main.bounds, document: self.document)
+		self.pdqView = PDQUIView(frame: view.bounds, document: self.document)
 		self.pdqView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		self.pdqView.backgroundColor = .white
 		self.view = self.pdqView

@@ -23,11 +23,5 @@ class PDQThumbnailUICollectionViewCell: UICollectionViewCell {
 		
 		self.imageView?.image = page.thumbnail(size: self.bounds.size)
 	}
-	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
 }
 #endif

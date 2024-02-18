@@ -6,7 +6,7 @@
 //  Copyright © 2018 Stand Alone, Inc. All rights reserved.
 //
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 	import PDFKit
 #else
 	import Quartz

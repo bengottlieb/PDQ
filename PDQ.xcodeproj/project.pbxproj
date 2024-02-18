@@ -75,13 +75,15 @@
 		B581093A2B80D288006F6CE8 /* PDQDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8774923B95A9400C0DEE2 /* PDQDocument.swift */; };
 		B581093B2B80D288006F6CE8 /* PDQView.PageCollectionItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773B23B95A9400C0DEE2 /* PDQView.PageCollectionItem2.swift */; };
 		B581093C2B80D288006F6CE8 /* PDQThumbnailCollectionItem_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8773723B95A9400C0DEE2 /* PDQThumbnailCollectionItem_macOS.swift */; };
-		B581093E2B80D359006F6CE8 /* CrossPlatformKit in Frameworks */ = {isa = PBXBuildFile; productRef = B581093D2B80D359006F6CE8 /* CrossPlatformKit */; };
 		B581093F2B80D3C9006F6CE8 /* SimplePDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5087CF41F1F92BE002261D4 /* SimplePDF.pdf */; };
 		B58109402B80D3C9006F6CE8 /* Swift Algorithms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5C84A74209BA80F00156D17 /* Swift Algorithms.pdf */; };
 		B58109412B80D3C9006F6CE8 /* single-page.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5121C6F20279E580028B606 /* single-page.pdf */; };
 		B58109422B80D3C9006F6CE8 /* ICC Spec.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5D735B01F20C0980099F101 /* ICC Spec.pdf */; };
 		B58109432B80D3C9006F6CE8 /* CoreData.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5D735AE1F20C0980099F101 /* CoreData.pdf */; };
 		B58109442B80D3C9006F6CE8 /* PDF Spec.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5D735AF1F20C0980099F101 /* PDF Spec.pdf */; };
+		B58109482B8219AE006F6CE8 /* CrossPlatformKit in Frameworks */ = {isa = PBXBuildFile; productRef = B58109472B8219AE006F6CE8 /* CrossPlatformKit */; };
+		B581094A2B8219E1006F6CE8 /* CrossPlatformKit in Frameworks */ = {isa = PBXBuildFile; productRef = B58109492B8219E1006F6CE8 /* CrossPlatformKit */; };
+		B581094C2B8219EB006F6CE8 /* CrossPlatformKit in Frameworks */ = {isa = PBXBuildFile; productRef = B581094B2B8219EB006F6CE8 /* CrossPlatformKit */; };
 		B5B088B81F1F6F7D00CB8D40 /* PDQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B088AE1F1F6F7D00CB8D40 /* PDQ.framework */; };
 		B5B088BD1F1F6F7D00CB8D40 /* PDQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B088BC1F1F6F7D00CB8D40 /* PDQTests.swift */; };
 		B5B8774F23B95A9400C0DEE2 /* PDQDocumentUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8772823B95A9400C0DEE2 /* PDQDocumentUIViewController.swift */; };
@@ -125,8 +127,6 @@
 		B5B8778823B95A9500C0DEE2 /* PDQDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8774923B95A9400C0DEE2 /* PDQDocument.swift */; };
 		B5B8778923B95A9500C0DEE2 /* PDQSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8774A23B95A9400C0DEE2 /* PDQSearchResult.swift */; };
 		B5B8778A23B95A9500C0DEE2 /* PDQSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8774A23B95A9400C0DEE2 /* PDQSearchResult.swift */; };
-		B5B8778E23B95B2000C0DEE2 /* CrossPlatformKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5B8778D23B95B2000C0DEE2 /* CrossPlatformKit */; };
-		B5B8779723B95C3400C0DEE2 /* CrossPlatformKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5B8779623B95C3400C0DEE2 /* CrossPlatformKit */; };
 		B5C84A75209BA80F00156D17 /* Swift Algorithms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5C84A74209BA80F00156D17 /* Swift Algorithms.pdf */; };
 		B5C84A76209BA80F00156D17 /* Swift Algorithms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5C84A74209BA80F00156D17 /* Swift Algorithms.pdf */; };
 		B5D735B11F20C0FC0099F101 /* CoreData.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B5D735AE1F20C0980099F101 /* CoreData.pdf */; };
@@ -266,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B581094C2B8219EB006F6CE8 /* CrossPlatformKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +276,7 @@
 			files = (
 				B5E6DD3D1F3FE5F200FBCCE4 /* Quartz.framework in Frameworks */,
 				B5E6DD3C1F3FE5ED00FBCCE4 /* Foundation.framework in Frameworks */,
+				B581094A2B8219E1006F6CE8 /* CrossPlatformKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +284,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5B8778E23B95B2000C0DEE2 /* CrossPlatformKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +301,6 @@
 			files = (
 				B5E6DD3B1F3FE5DD00FBCCE4 /* Quartz.framework in Frameworks */,
 				B5E6DD391F3FE5D700FBCCE4 /* Foundation.framework in Frameworks */,
-				B5B8779723B95C3400C0DEE2 /* CrossPlatformKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B581093E2B80D359006F6CE8 /* CrossPlatformKit in Frameworks */,
+				B58109482B8219AE006F6CE8 /* CrossPlatformKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +586,9 @@
 				B5087CF81F1F9375002261D4 /* PBXTargetDependency */,
 			);
 			name = "TestHost-iOS";
+			packageProductDependencies = (
+				B581094B2B8219EB006F6CE8 /* CrossPlatformKit */,
+			);
 			productName = TestHost;
 			productReference = B5087CD51F1F8DDE002261D4 /* TestHost-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -605,6 +608,9 @@
 				B51D5D661F221BF000D096C3 /* PBXTargetDependency */,
 			);
 			name = "TestHost-macOS";
+			packageProductDependencies = (
+				B58109492B8219E1006F6CE8 /* CrossPlatformKit */,
+			);
 			productName = "TestHost-macOS";
 			productReference = B51D5D571F221BC800D096C3 /* TestHost-macOS.app */;
 			productType = "com.apple.product-type.application";
@@ -624,7 +630,6 @@
 			);
 			name = PDQ_iOS;
 			packageProductDependencies = (
-				B5B8778D23B95B2000C0DEE2 /* CrossPlatformKit */,
 			);
 			productName = PDQ;
 			productReference = B5B088AE1F1F6F7D00CB8D40 /* PDQ.framework */;
@@ -663,7 +668,6 @@
 			);
 			name = PDQ_macOS;
 			packageProductDependencies = (
-				B5B8779623B95C3400C0DEE2 /* CrossPlatformKit */,
 			);
 			productName = PDQ_macOS;
 			productReference = B5B088D11F1F706900CB8D40 /* PDQ.framework */;
@@ -683,7 +687,7 @@
 			);
 			name = "TestHost-SwiftUI";
 			packageProductDependencies = (
-				B581093D2B80D359006F6CE8 /* CrossPlatformKit */,
+				B58109472B8219AE006F6CE8 /* CrossPlatformKit */,
 			);
 			productName = "TestHost-SwiftUI";
 			productReference = B5E88E082B80D11F0077CF48 /* TestHost-SwiftUI.app */;
@@ -752,7 +756,7 @@
 			);
 			mainGroup = B5B088A41F1F6F7D00CB8D40;
 			packageReferences = (
-				B5B8778C23B95B2000C0DEE2 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */,
+				B58109462B8219AE006F6CE8 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */,
 			);
 			productRefGroup = B5B088AF1F1F6F7D00CB8D40 /* Products */;
 			projectDirPath = "";
@@ -1510,11 +1514,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.TestHost-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -1558,10 +1563,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.TestHost-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -1643,30 +1649,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B5B8778C23B95B2000C0DEE2 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */ = {
+		B58109462B8219AE006F6CE8 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bengottlieb/CrossPlatformKit";
+			repositoryURL = "https://github.com/ios-tooling/CrossPlatformKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.10;
+				minimumVersion = 1.0.11;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B581093D2B80D359006F6CE8 /* CrossPlatformKit */ = {
+		B58109472B8219AE006F6CE8 /* CrossPlatformKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5B8778C23B95B2000C0DEE2 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */;
+			package = B58109462B8219AE006F6CE8 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */;
 			productName = CrossPlatformKit;
 		};
-		B5B8778D23B95B2000C0DEE2 /* CrossPlatformKit */ = {
+		B58109492B8219E1006F6CE8 /* CrossPlatformKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5B8778C23B95B2000C0DEE2 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */;
+			package = B58109462B8219AE006F6CE8 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */;
 			productName = CrossPlatformKit;
 		};
-		B5B8779623B95C3400C0DEE2 /* CrossPlatformKit */ = {
+		B581094B2B8219EB006F6CE8 /* CrossPlatformKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5B8778C23B95B2000C0DEE2 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */;
+			package = B58109462B8219AE006F6CE8 /* XCRemoteSwiftPackageReference "CrossPlatformKit" */;
 			productName = CrossPlatformKit;
 		};
 /* End XCSwiftPackageProductDependency section */
